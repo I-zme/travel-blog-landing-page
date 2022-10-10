@@ -12,7 +12,7 @@
         <div class="container">
             <a href="#"><img src="" alt=""></a>
             <nav class="primary-navigation">
-                <ul class="nav-list">
+                <ul role="list" class="nav-list">
                     <li><a class="nav-link" href="#">About</a></li>
                     <li><a class="nav-link" href="#">Burn</a></li>
                     <li><a class="nav-link" href="#">Contact Us</a></li>
@@ -21,20 +21,20 @@
         </div>
     </header>
     <main>
-        <div class="title"></div>
-        <div class="about">
+        <section class="title"></section>
+        <section class="about">
             <img src="" alt="">
             <div class="about-text"></div>
             <img src="" alt="">
-        </div>
-        <div class="Burn">
+        </section>
+        <section class="Burn">
             <div class=""></div>
             <video controls autoplay muted>
                 <source src="">
-                Your browser does not support this video.
+                Your browser does not support the video tag.
             </video>
-        </div>
-        <div class="contact-us">
+        </section>
+        <section class="contact-us">
             <form action="https://www.freecodecamp.com/email-submit">
                 <label><input type="radio" name="contact" value="subscribe" checked> Subscribe</label>
                 <label><input type="radio" name="contact" value="contact"> Contact Us</label>
@@ -50,7 +50,7 @@
                 <!-- add/remove fields with js according to radio buttons -->
                 <input type="submit">
             </form>
-        </div>
+        </section>
     </main>
 </body>
 </html>
