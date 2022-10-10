@@ -1,5 +1,16 @@
 :root{
-    
+
+
+
+    --size-100:0.25rem;
+    --size-200:0.5rem;
+    --size-300:0.75rem;
+    --size-400:1rem;
+    --size-500:1.5rem;
+    --size-600:2rem;
+    --size-700:3rem;
+    --size-800:4rem;
+    --size-900:5rem;
 }
 
 
@@ -71,8 +82,106 @@ svg {
     }
 }
 
-/* utilities */
 
 
 
 /* general styling */
+
+.primary-header{
+    padding-top: var(--size-300);
+}
+
+.nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger-icon, .close-icon {
+    width: 20px;
+    height: auto;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+.nav-list{
+    display: flex;
+    gap: clamp(var(--size-300), 5vw,var(--size-800));
+}
+
+.nav-list a{
+    text-decoration: none;
+}
+
+@media (max-width:45em){
+    .primary-navigation{
+        display: none;
+        /* change */
+        background-color: white; 
+        /*  */
+        border-radius: var(--size-100);
+        position: absolute;
+        inset: 6rem var(--size-400) auto;
+        z-index: 10;
+        padding: var(--size-600);
+    }
+
+    .primary-header[data-overlay]::before{
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+    }
+
+    .nav-list{
+        display: grid;
+        gap: var(--size-400);
+        text-align: center;
+    }
+
+    .primary-navigation[data-visible]{
+        display: block;
+    }
+
+    .mobile-nav-toggle{
+        display: block;
+        position: fixed;
+        top: var(--size-600);
+        right: var(--size-400);
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        padding: 0.5em;
+    }
+
+    .mobile-nav-toggle .close-icon {
+        display: none;
+    }
+}
+
+
+
+/* utilities */
+
+.visually-hidden {
+    position: absolute;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+
+.container {
+    --max-width:1100px;
+
+    width: min(var(--max-width), 100% - (var(--size-500)*2));
+    margin-inline: auto;
+}
