@@ -1,16 +1,16 @@
-:root{
+:root {
 
 
 
-    --size-100:0.25rem;
-    --size-200:0.5rem;
-    --size-300:0.75rem;
-    --size-400:1rem;
-    --size-500:1.5rem;
-    --size-600:2rem;
-    --size-700:3rem;
-    --size-800:4rem;
-    --size-900:5rem;
+    --size-100: 0.25rem;
+    --size-200: 0.5rem;
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
 }
 
 
@@ -42,8 +42,8 @@ html:focus-within {
     scroll-behavior: smooth;
 }
 
-html, 
-body{
+html,
+body {
     height: 100%;
 }
 
@@ -60,7 +60,7 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture, 
+picture,
 svg {
     max-width: 100%;
     display: block;
@@ -87,39 +87,42 @@ svg {
 
 /* general styling */
 
-.primary-header{
+/* header, navigation*/
+.primary-header {
     padding-top: var(--size-300);
+    padding-bottom: var(--size-300);
 }
 
-.nav-wrapper{
+.nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.hamburger-icon, .close-icon {
+.hamburger-icon,
+.close-icon {
     width: 20px;
     height: auto;
 }
 
-.mobile-nav-toggle{
+.mobile-nav-toggle {
     display: none;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
-    gap: clamp(var(--size-300), 5vw,var(--size-800));
+    gap: clamp(var(--size-300), 5vw, var(--size-800));
 }
 
-.nav-list a{
+.nav-list a {
     text-decoration: none;
 }
 
-@media (max-width:45em){
-    .primary-navigation{
+@media (max-width:45em) {
+    .primary-navigation {
         display: none;
         /* change */
-        background-color: white; 
+        background-color: white;
         /*  */
         border-radius: var(--size-100);
         position: absolute;
@@ -128,26 +131,26 @@ svg {
         padding: var(--size-600);
     }
 
-    .primary-header[data-overlay]::before{
+    .primary-header[data-overlay]::before {
         content: '';
         position: fixed;
         inset: 0;
-        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
     }
 
-    .nav-list{
+    .nav-list {
         display: grid;
         gap: var(--size-400);
         text-align: center;
     }
 
-    .primary-navigation[data-visible]{
+    .primary-navigation[data-visible] {
         display: block;
     }
 
-    .mobile-nav-toggle{
+    .mobile-nav-toggle {
         display: block;
-        position: fixed;
+        position: absolute;
         top: var(--size-600);
         right: var(--size-400);
         cursor: pointer;
@@ -161,6 +164,72 @@ svg {
     }
 }
 
+/* main */
+
+
+.title{
+    height: 200px;
+    width: 100%;
+    background-color: rgb(44, 44, 210);
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--size-700);
+}
+
+
+.section-header {
+    text-align: center;
+    font-size: var(--size-600);
+    text-transform: uppercase;
+    grid-area: header;
+}
+
+.about img {
+    max-height: 95%;
+    max-width: 95%;
+    object-fit:scale-down;
+}
+
+.left{
+    grid-area: left-img;
+}
+.right{
+    grid-area: right-img;
+}
+
+.about .about-text {
+    grid-area: about-text;
+    text-align: justify;
+}
+
+.about-text p{
+    padding: var(--size-300);
+}
+
+.about{
+    height: 100vh;
+    width: 100%;
+    border: 10px double black;
+    display: grid;
+    grid: 10% 90% / 30% 40% 30% ;
+    grid-template-areas: 
+        'header header header'
+        'left-img about-text right-img';
+    justify-items: center;
+    align-items: center;
+
+}
+
+@media (max-width:50em){
+    .about{
+        height: 150vh;
+        grid: 10% 40% 50% / 100%;
+        grid-template-areas: 
+        'header' 'about-text' 'right-img';
+    }
+}
 
 
 /* utilities */
@@ -179,9 +248,16 @@ svg {
 }
 
 
-.container {
-    --max-width:1100px;
+.container, main {
+    --max-width: 1100px;
 
     width: min(var(--max-width), 100% - (var(--size-500)*2));
     margin-inline: auto;
+}
+
+@media (max-width:50em){
+    /* check how best to do this */
+    .title{
+        font-size: var(--size-600);
+    }
 }
