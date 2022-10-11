@@ -166,69 +166,73 @@ svg {
 
 /* main */
 
+section {
+    height: 100vh;
+    width: 100%;
+    /* CHANGE */
+    border: 7px double black;
+    /*  */
+}
 
 .title{
     height: 200px;
     width: 100%;
+    /*  */
     background-color: rgb(44, 44, 210);
     color: aliceblue;
+    /*  */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: var(--size-700);
 }
 
-
 .section-header {
-    text-align: center;
     font-size: var(--size-600);
     text-transform: uppercase;
-    grid-area: header;
+    grid-column: 1/-1 ;
+    grid-row: 1;
+    text-align: center;
+    align-self: center;
+    margin-bottom: var(--size-500);
 }
 
-.about img {
-    max-height: 95%;
-    max-width: 95%;
-    object-fit:scale-down;
+/* ABOUT */
+
+.about img{
+    grid-row:3/-2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .left{
-    grid-area: left-img;
+    grid-column: 1/span 2; 
 }
+
 .right{
-    grid-area: right-img;
+    grid-column: 6/span 2;
 }
 
-.about .about-text {
-    grid-area: about-text;
-    text-align: justify;
+.about-text{
+    grid-column: 3/span 3;
+    grid-row: 2/-1;
+    padding: var(--size-400);
 }
 
-.about-text p{
-    padding: var(--size-300);
+.burn-text, video{
+    grid-row: 2/-1;
 }
 
-.about{
-    height: 100vh;
+.burn-text{
+    grid-column: 1/span 3;
+    padding: var(--size-400);
+}
+
+.burn video{
+    grid-column: 4/span 4;
+    height: 90%;
     width: 100%;
-    border: 10px double black;
-    display: grid;
-    grid: 10% 90% / 30% 40% 30% ;
-    grid-template-areas: 
-        'header header header'
-        'left-img about-text right-img';
-    justify-items: center;
-    align-items: center;
-
-}
-
-@media (max-width:50em){
-    .about{
-        height: 150vh;
-        grid: 10% 40% 50% / 100%;
-        grid-template-areas: 
-        'header' 'about-text' 'right-img';
-    }
 }
 
 
@@ -247,6 +251,30 @@ svg {
     border: 0 !important;
 }
 
+.grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 2fr repeat(12, 1fr);
+    column-gap: var(--size-200);
+    padding: var(--size-600);
+}
+
+@media (max-width:50em){
+    .about-text{grid-area: mobile-top;}
+    .left{display: none;}
+    .right{grid-area: mobile-bottom;}
+    .burn video{grid-area: mobile-top;}
+    .burn-text{grid-area: mobile-bottom;}
+
+    section{
+        height: 200vh;
+    }
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 5fr 5fr;
+        grid-template-areas: 'header' 'mobile-top' 'mobile-bottom';
+    }
+}
 
 .container, main {
     --max-width: 1100px;
