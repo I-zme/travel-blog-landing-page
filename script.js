@@ -5,9 +5,13 @@ const primaryNav = document.querySelector('.primary-navigation');
 navToggle.addEventListener('click', toggleNavigation);
 
 primaryHeader.addEventListener('click',(e)=>{
-    if(primaryHeader.hasAttribute('data-overlay')&&(!primaryNav.contains(e.target)) && (!navToggle.contains(e.target))){
+    if(e.target.classList.contains('nav-link')){
         toggleNavigation()
     }
+    else if(primaryHeader.hasAttribute('data-overlay')&&(!primaryNav.contains(e.target)) && (!navToggle.contains(e.target))){
+        toggleNavigation()
+    }
+    
 });
 
 function toggleNavigation(){

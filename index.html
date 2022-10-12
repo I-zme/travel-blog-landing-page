@@ -9,6 +9,8 @@
     <title>Document</title>
 </head>
 <body>
+        <div class="scroll-container">
+
     <header class="primary-header">
         <div class="container">
             <div class="nav-wrapper">
@@ -19,21 +21,20 @@
                     <span class="visually-hidden">Menu</span></button>
                 <nav class="primary-navigation" id="primary-navigation">
                     <ul aria-label="Primary" role="list" class="nav-list" >
-                        <li><a class="nav-link" href="#">About</a></li>
-                        <li><a class="nav-link" href="#">Burn</a></li>
-                        <li><a class="nav-link" href="#">Contact Us</a></li>
+                        <li><a class="nav-link" href="#about">About</a></li>
+                        <li><a class="nav-link" href="#burn">Burn</a></li>
+                        <li><a class="nav-link" href="#contact-us">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <div class="scroll-container">
         <main>
             <section class="title">
                 <h1 class="fs-primary-heading">We are travelers who rant.</h1>
             </section>
 
-            <section class="about grid">
+            <section class="about grid" id="about">
                 <header class="section-header">About</header>
                 <img class="left" src="img/jake-blucker-tMzCrBkM99Y-unsplash (1).jpg" alt="">
                 <div class="about-text">
@@ -43,7 +44,7 @@
                 <img class="right" src="img/jet-dela-cruz-Gf6puSx3h6Y-unsplash.jpg" alt="">
             </section>
 
-            <section class="burn grid">
+            <section class="burn grid" id="burn">
                 <header class="section-header">Burn</header>
                 <div class="burn-text">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
@@ -56,7 +57,7 @@
                 </video>
             </section>
 
-            <section class="contact-us">
+            <section class="contact-us" id="contact-us">
                 <header class="section-header">Contact Us</header>
                 <form action="https://www.freecodecamp.com/email-submit">
                     <label for="subscribe-radio"><input id="subscribe-radio" type="radio" name="contact" value="subscribe" checked> Subscribe</label>
