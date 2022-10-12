@@ -83,14 +83,28 @@ svg {
 }
 
 
-
-
 /* general styling */
+
+
+.container {
+    position: relative;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    width: 100%;
+
+    padding: 0 var(--size-800);
+}
+
+section,
+.primary-header {
+    scroll-snap-align: start;
+}
 
 /* header, navigation*/
 .primary-header {
-    padding-top: var(--size-300);
-    padding-bottom: var(--size-300);
+    height: 22vh;
+    padding: var(--size-500);
 }
 
 .nav-wrapper {
@@ -165,6 +179,8 @@ svg {
 }
 
 /* main */
+
+
 
 section {
     height: 100vh;
@@ -294,12 +310,12 @@ section {
     }
 }
 
-.container, main {
+/* .container, main {
     --max-width: 1100px;
 
     width: min(var(--max-width), 100% - (var(--size-500)*2));
     margin-inline: auto;
-}
+} */
 
 @media (max-width:50em){
     /* check how best to do this */
