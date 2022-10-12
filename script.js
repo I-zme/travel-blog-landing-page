@@ -2,11 +2,21 @@ const primaryHeader = document.querySelector('.primary-header');
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const primaryNav = document.querySelector('.primary-navigation');
 
-navToggle.addEventListener('click', ()=>{
+navToggle.addEventListener('click', toggleNavigation);
+
+primaryHeader.addEventListener('click',(e)=>{
+    if(primaryHeader.hasAttribute('data-overlay')&&(!primaryNav.contains(e.target)) && (!navToggle.contains(e.target))){
+        toggleNavigation()
+    }
+});
+
+function toggleNavigation(){
     primaryNav.hasAttribute('data-visible') ? navToggle.setAttribute('aria-expanded', 'false') : navToggle.setAttribute('aria-expanded', 'true');
     primaryNav.toggleAttribute('data-visible');
     primaryHeader.toggleAttribute('data-overlay');
-});
+}
+
+
 
 const contactRadio = document.querySelector('#contact-radio');
 const subscribeCheckbox = document.querySelector('#subscribe-checkbox');
