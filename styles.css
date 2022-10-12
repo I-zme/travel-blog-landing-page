@@ -85,26 +85,27 @@ svg {
 
 /* general styling */
 
-
-.container {
+.scroll-container {
     position: relative;
     overflow: auto;
     scroll-snap-type: y mandatory;
-    height: 100vh;
+    height: 85vh;
     width: 100%;
-
-    padding: 0 var(--size-800);
 }
 
-section,
-.primary-header {
+section{
     scroll-snap-align: start;
 }
 
 /* header, navigation*/
+
+.logo {
+    height: 65px;
+    width: auto;
+}
+
 .primary-header {
-    height: 22vh;
-    padding: var(--size-500);
+    height: 15vh;
 }
 
 .nav-wrapper {
@@ -132,7 +133,7 @@ section,
     text-decoration: none;
 }
 
-@media (max-width:45em) {
+@media (max-width:50em) {
     .primary-navigation {
         display: none;
         /* change */
@@ -182,12 +183,15 @@ section,
 
 
 
+
 section {
     height: 100vh;
     width: 100%;
     /* CHANGE */
     border: 7px double black;
     /*  */
+
+    padding-bottom: var(--size-500);
 }
 
 .title{
@@ -219,6 +223,7 @@ section {
     grid-row:3/-2;
     width: 100%;
     height: 100%;
+    max-height: 100%;
     object-fit: cover;
 }
 
@@ -234,7 +239,6 @@ section {
     grid-column: 3/span 3;
     grid-row: 2/-1;
     /* from utilities? */
-    padding: var(--size-400);
 }
 
 .burn-text, video{
@@ -244,7 +248,6 @@ section {
 .burn-text{
     grid-column: 1/span 3;
     /* from utilities? */
-    padding: var(--size-400);
 }
 
 .burn video{
@@ -296,26 +299,31 @@ section {
 @media (max-width:50em){
     .about-text{grid-area: mobile-top;}
     .left{display: none;}
-    .right{grid-area: mobile-bottom;}
+    img.right{grid-area: mobile-bottom;}
     .burn video{grid-area: mobile-top;}
     .burn-text{grid-area: mobile-bottom;}
 
     section{
-        height: 200vh;
+        height: fit-content;        
     }
     .grid{
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr 5fr 5fr;
+        grid-template-rows: 75px min-content min-content;
         grid-template-areas: 'header' 'mobile-top' 'mobile-bottom';
+        padding: var(--size-400);
     }
 }
 
-/* .container, main {
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.container, main {
     --max-width: 1100px;
 
     width: min(var(--max-width), 100% - (var(--size-500)*2));
     margin-inline: auto;
-} */
+}
 
 @media (max-width:50em){
     /* check how best to do this */
