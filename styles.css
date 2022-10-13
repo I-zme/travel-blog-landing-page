@@ -31,6 +31,7 @@
 
     --primary-heading-height: 70px;
     --title-height: 200px;
+    --contact-section-width:60vw;
 
     --fs-body: ;
     --fs-primary-heading: var(--fs-900);
@@ -221,11 +222,6 @@ section, .primary-header, footer{
 /* main */
 
 
-
-.section-min-height{
-    min-height: calc(100vh - var(--primary-heading-height));
-}
-
 section {
     height: fit-content;
     width: 100%;
@@ -233,7 +229,6 @@ section {
 }
 
 .title{
-    min-height: var(--title-height);
     height: var(--title-height);
     width: 100%;
     /*  */
@@ -302,18 +297,60 @@ section {
 
 /* CONTACT US */
 
+.contact-us{
+    display: grid;
+    grid-template-rows: 80px min-content;
+    justify-content: center;
+    align-items: stretch;
+}
 
 .contact-us form{
     margin-top: var(--size-400);
     border: 1px solid black;
-    /* display: flex; */
-    /* flex-direction: column; */
+    padding: var(--size-700);
+    width: var(--contact-section-width);
 }
 
-.contact-us form label{
+.contact-text{
+    width: 90%;
+}
+
+.contact-us form *{
     display: block;
-
 }
+
+input[id='subscribe-checkbox']{
+    display: inline;
+}
+
+input[type='radio']{
+    display: none;
+}
+
+input[type='radio']+label {
+    display: inline;
+    font-weight: 600;
+}
+
+label[for='subscribe-radio']::after{
+    content: '  /   ';
+    position: relative;
+    bottom: -5px;
+    font-size: var(--fs-700);
+    font-weight: 800;
+    color: black;
+    z-index: -1;
+}
+
+input[type='radio']:checked+label{
+    font-weight: 900;
+}
+
+input[type='radio']:not(:checked)+label {
+    color: grey;
+}
+
+
 
 #for-contact, #for-subscribe{
     display: none;
@@ -418,12 +455,9 @@ section {
     .burn-text{grid-area: mobile-bottom;}
 
     section{
-        min-height:70vh;        
         height: fit-content;
     }
-    .title{
-        min-height: var(--title-height);
-    }
+
     .grid{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr min-content min-content;
@@ -443,6 +477,7 @@ section {
 @media (max-width:50em){
     :root{
         --fs-primary-heading:var(--fs-700);
+        --contact-section-width:90vw;
 
     }
 }
