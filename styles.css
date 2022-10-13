@@ -30,12 +30,13 @@
     --primary-heading-padding-tb: var(--size-300);
 
     --primary-heading-height: 70px;
-    --title-height: 200px;
+    --title-height: 300px;
 
     --fs-body: ;
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-700);
     --fs-nav: ;
+    --fs-title:var(--fs-900);
 }
 
 
@@ -125,7 +126,6 @@ svg {
 
 
 .scroll-container {
-    /* scroll-behavior: smooth; */
     position: relative;
     overflow: auto;
     scroll-snap-type: y mandatory;
@@ -206,7 +206,6 @@ section, .primary-header, footer{
         display: block;
         position: absolute;
         right: var(--primary-heading-padding-lr);
-        cursor: pointer;
         background: transparent;
         border: 0;
         padding: 0.5em;
@@ -230,15 +229,35 @@ section {
 .title{
     height: var(--title-height);
     width: 100%;
-    /*  */
-    background-color: rgb(44, 44, 210);
-    color: aliceblue;
-    /*  */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--size-700);
 }
+
+.title::before{
+    content:'';
+    background: url(img/sava-bobov-eVa2FK83K6w-unsplash.jpg) no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.75;
+    z-index: -2;
+}
+
+.title h1{
+    /* change? */
+    color: aliceblue;
+    text-shadow: 3px 0px black;
+    font-size: var(--fs-title);
+    /*  */
+    z-index: -1;
+}
+
 
 .section-header {
     font-size: var(--fs-secondary-heading);
@@ -308,14 +327,34 @@ section {
     border: 1px solid black;
     padding: var(--size-600) clamp(var(--size-400), 5vw, var(--size-700));
     width: clamp(340px, 70vw , 520px);
+    display: grid;
+    row-gap: var(--size-400);
+    grid-template-columns: auto 1fr;
+}
+
+.contact-us form *{
+    grid-column: 1/-1;
+}
+
+input[type='submit']{
+    grid-column: 1/span 1;
+    padding: 0 var(--size-600);
+}
+
+#newsletter-frequency{
+    padding: var(--size-100) var(--fs-400);
+}
+
+label[for='subscribe-radio'] {
+    grid-column: 1/span 1;
+}
+
+label[for='contact-radio']{
+    grid-column: 2/span 1;
 }
 
 .contact-text{
     width: 95%;
-}
-
-.contact-us form *{
-    display: block;
 }
 
 .contact-us input[id='subscribe-checkbox']{
@@ -327,36 +366,43 @@ section {
 }
 
 .contact-us input[type='radio']+label {
-    display: inline;
     font-weight: 600;
 }
 
-label[for='subscribe-radio']::after{
-    content: '  /   ';
-    position: relative;
-    bottom: -5px;
-    font-size: var(--fs-700);
-    font-weight: 800;
-    color: black;
-    z-index: -1;
-}
-
 .contact-us input[type='radio']:checked+label{
+        /* utilities */
     font-weight: 900;
 }
 
 .contact-us input[type='radio']:not(:checked)+label {
+        /* utilities */
     color: grey;
 }
+
 
 #for-contact, #for-subscribe{
     display: none;
 }
 
 #for-contact[data-visible], #for-subscribe[data-visible]{
-    display: block;
+    display: grid;
+    row-gap: var(--size-400 );
 }
 
+.contact-us input[type='text'], 
+.contact-us input[type='email']{
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed black;
+    padding: 2px 5px;
+    outline: none;
+}
+
+.contact-us input[type='text']:focus,
+.contact-us input[type='email']:focus {
+    border-bottom: 1.5px solid black;
+    box-shadow: rgba(33, 35, 38, 0.5) 0px 10px 10px -10px;
+}
 
 /* FOOTER */
 
@@ -386,6 +432,9 @@ label[for='subscribe-radio']::after{
     border-radius: var(--size-100);
 }
 
+.border-radius-400{
+    border-radius: var(--size-400);
+}
 
 .fs-primary-heading{
     font-size:var(--fs-primary-heading);
@@ -401,6 +450,7 @@ label[for='subscribe-radio']::after{
 }
 
 .text-border{
+    /* change? */
     border: 1px solid black;
 }
 
@@ -418,6 +468,7 @@ label[for='subscribe-radio']::after{
     left: 50%;
     translate: -50%;
     width: 15rem;
+    /* change? */
     border-top: 1.5px solid black;
 }
 
@@ -429,7 +480,12 @@ label[for='subscribe-radio']::after{
     left: 50%;
     translate: -50%;
     width: 17rem;
+    /* change? */
     border-top: 1.5px solid black;
+}
+
+.pointer{
+    cursor: pointer;
 }
 
 
@@ -474,6 +530,7 @@ label[for='subscribe-radio']::after{
 @media (max-width:50em){
     :root{
         --fs-primary-heading:var(--fs-700);
+        --fs-title:var(--fs-800);
 
     }
 }

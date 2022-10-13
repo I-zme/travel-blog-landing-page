@@ -15,7 +15,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="#"><img class="logo" src="img/logo.svg" alt="logo"></a>
-                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <button class="mobile-nav-toggle | pointer" aria-controls="primary-navigation" aria-expanded="false">
                     <img class="hamburger-icon" src="img/hamburger-icon.svg" alt="" aria-hidden="true">
                     <img class="close-icon" src="img/close-icon.svg" alt="" aria-hidden="true">
                     <span class="visually-hidden">Menu</span></button>
@@ -60,8 +60,8 @@
             <section class="contact-us" id="contact-us">
                 <header class="section-header underline">Contact Us</header>
                 <form action="https://www.freecodecamp.com/email-submit">
-                    <input id="subscribe-radio" type="radio" name="contact" value="subscribe" checked> <label for="subscribe-radio">Subscribe</label>
-                    <input id="contact-radio" type="radio" name="contact" value="contact"><label for="contact-radio"> Contact Us</label>
+                    <input id="subscribe-radio" type="radio" name="contact" value="subscribe" checked> <label for="subscribe-radio" class="pointer">Subscribe</label>
+                    <input id="contact-radio" type="radio" name="contact" value="contact"><label for="contact-radio" class="pointer"> Contact Us</label>
                     <label for="name">Full name: <input type="text" placeholder="John Smith" id="name"></label>
                     <label for="email">Email: <input type="email" placeholder="john.smith666@exmaple.com" id="email"></label>
                     <div class="contact-div">
@@ -72,7 +72,7 @@
                         </div>
                     <div id="for-subscribe" data-visible>
                             <label for="newsletter-frequency">How often do you want to receive our newsletter?
-                                <select name="newsletter-frequency" id="newsletter-frequency">
+                                <select name="newsletter-frequency" id="newsletter-frequency" class="border-radius-400">
                                     <option value="weekly">weekly</option>
                                     <option value="monthly">monthly</option>
                                     <option value="yearly">yearly</option>
@@ -81,7 +81,7 @@
                         </div>
                     </div>
 
-                    <input type="submit">
+                    <input type="submit" class="border-radius-400 pointer">
                 </form>
             </section>
         </main>
