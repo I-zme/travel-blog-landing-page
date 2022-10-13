@@ -31,7 +31,6 @@
 
     --primary-heading-height: 70px;
     --title-height: 200px;
-    --contact-section-width:60vw;
 
     --fs-body: ;
     --fs-primary-heading: var(--fs-900);
@@ -307,27 +306,27 @@ section {
 .contact-us form{
     margin-top: var(--size-400);
     border: 1px solid black;
-    padding: var(--size-700);
-    width: var(--contact-section-width);
+    padding: var(--size-600) clamp(var(--size-400), 5vw, var(--size-700));
+    width: clamp(340px, 70vw , 520px);
 }
 
 .contact-text{
-    width: 90%;
+    width: 95%;
 }
 
 .contact-us form *{
     display: block;
 }
 
-input[id='subscribe-checkbox']{
+.contact-us input[id='subscribe-checkbox']{
     display: inline;
 }
 
-input[type='radio']{
+.contact-us input[type='radio']{
     display: none;
 }
 
-input[type='radio']+label {
+.contact-us input[type='radio']+label {
     display: inline;
     font-weight: 600;
 }
@@ -342,15 +341,13 @@ label[for='subscribe-radio']::after{
     z-index: -1;
 }
 
-input[type='radio']:checked+label{
+.contact-us input[type='radio']:checked+label{
     font-weight: 900;
 }
 
-input[type='radio']:not(:checked)+label {
+.contact-us input[type='radio']:not(:checked)+label {
     color: grey;
 }
-
-
 
 #for-contact, #for-subscribe{
     display: none;
@@ -477,7 +474,6 @@ input[type='radio']:not(:checked)+label {
 @media (max-width:50em){
     :root{
         --fs-primary-heading:var(--fs-700);
-        --contact-section-width:90vw;
 
     }
 }
