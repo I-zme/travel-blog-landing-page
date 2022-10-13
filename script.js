@@ -34,6 +34,5 @@ buttons.forEach((button)=>{
     button.addEventListener('click',()=>{
         contactRadio.checked ? contactDiv.setAttribute('data-visible','') : contactDiv.removeAttribute('data-visible');
         (subscribeRadio.checked || subscribeCheckbox.checked) ? subscribeDiv.setAttribute('data-visible','') : subscribeDiv.removeAttribute('data-visible');
-        //  ? subscribeDiv.setAttribute('data-visible','') : subscribeDiv.removeAttribute('data-visible');
     });
 });
