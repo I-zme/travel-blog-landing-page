@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Nanum+Gothic&family=Noto+Sans:wght@200;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-        <div class="scroll-container">
 
     <header class="primary-header">
         <div class="container">
@@ -29,63 +33,62 @@
             </div>
         </div>
     </header>
-        <main>
-            <section class="title">
-                <h1 class="fs-primary-heading">We are travelers who rant.</h1>
-            </section>
+    <main>
+        <section class="title">
+            <h1 class="fs-primary-heading">We are TRAVELERS who RANT.</h1>
+        </section>
 
-            <section class="about | grid" id="about">
-                <header class="section-header underline">About</header>
-                <img class="left" src="img/jake-blucker-tMzCrBkM99Y-unsplash (1).jpg" alt="">
-                <div class="about-text | padding-400 text-border">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem non quae mollitia ex, explicabo cumque commodi nemo quas modi praesentium harum iste necessitatibus consectetur porro perspiciatis expedita maxime voluptate quos!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minus consequatur minima suscipit. Optio magni nemo tempore corporis esse, similique ad corrupti ea eum praesentium, placeat iusto molestias! Molestiae, a.</p>
-                </div>
-                <img class="right" src="img/jet-dela-cruz-Gf6puSx3h6Y-unsplash.jpg" alt="">
-            </section>
+        <section class="about | grid" id="about">
+            <header class="section-header underline">About</header>
+            <img class="left" src="img/jake-blucker-tMzCrBkM99Y-unsplash (1).jpg" alt="">
+            <div class="about-text | padding-400 text-border">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem non quae mollitia ex, explicabo cumque commodi nemo quas modi praesentium harum iste necessitatibus consectetur porro perspiciatis expedita maxime voluptate quos!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minus consequatur minima suscipit. Optio magni nemo tempore corporis esse, similique ad corrupti ea eum praesentium, placeat iusto molestias! Molestiae, a.</p>
+            </div>
+            <img class="right" src="img/jet-dela-cruz-Gf6puSx3h6Y-unsplash.jpg" alt="">
+        </section>
 
-            <section class="burn grid" id="burn">
-                <header class="section-header underline">Burn</header>
-                <div class="burn-text | padding-400 text-border">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
-                </div>
-                <video controls autoplay muted>
-                    <source src="">
-                    Your browser does not support the video tag.
-                </video>
-            </section>
+        <section class="burn grid" id="burn">
+            <header class="section-header underline">Burn</header>
+            <div class="burn-text | padding-400 text-border">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus natus placeat quam officiis est sit reiciendis nostrum consectetur mollitia atque, voluptates non fuga odit nesciunt minima voluptatibus fugiat voluptas quo.</p>
+            </div>
+            <video controls autoplay muted>
+                <source src="">
+                Your browser does not support the video tag.
+            </video>
+        </section>
 
-            <section class="contact-us" id="contact-us">
-                <header class="section-header underline">Contact Us</header>
-                <form action="https://www.freecodecamp.com/email-submit">
-                    <input id="subscribe-radio" type="radio" name="contact" value="subscribe" checked> <label for="subscribe-radio" class="pointer">Subscribe</label>
-                    <input id="contact-radio" type="radio" name="contact" value="contact"><label for="contact-radio" class="pointer"> Contact Us</label>
-                    <label for="name">Full name: <input type="text" placeholder="John Smith" id="name"></label>
-                    <label for="email">Email: <input type="email" placeholder="john.smith666@exmaple.com" id="email"></label>
-                    <div class="contact-div">
-                        <div id="for-contact">
-                            <label for="contact-text">Enter text here: </label>
-                            <textarea name="" id="contact-text" class="contact-text" cols="30" rows="10"></textarea>
-                            <label for="subscribe-checkbox"><input id="subscribe-checkbox" type="checkbox"> I want to receive notifications by mail!</label>
-                        </div>
-                    <div id="for-subscribe" data-visible>
-                            <label for="newsletter-frequency">How often do you want to receive our newsletter?
-                                <select name="newsletter-frequency" id="newsletter-frequency" class="border-radius-400">
-                                    <option value="weekly">weekly</option>
-                                    <option value="monthly">monthly</option>
-                                    <option value="yearly">yearly</option>
-                                </select>
-                            </label>
-                        </div>
+        <section class="contact-us" id="contact-us">
+            <header class="section-header underline">Contact Us</header>
+            <form action="https://www.freecodecamp.com/email-submit">
+                <input id="subscribe-radio" type="radio" name="contact" value="subscribe" checked> <label for="subscribe-radio" class="pointer">Subscribe</label>
+                <input id="contact-radio" type="radio" name="contact" value="contact"><label for="contact-radio" class="pointer"> Contact Us</label>
+                <label for="name">Full name: <input type="text" placeholder="John Smith" id="name"></label>
+                <label for="email">Email: <input type="email" placeholder="john.smith666@exmaple.com" id="email"></label>
+                <div class="contact-div">
+                    <div id="for-contact">
+                        <label for="contact-text">Enter text here: </label>
+                        <textarea name="" id="contact-text" class="contact-text" cols="30" rows="10"></textarea>
+                        <label for="subscribe-checkbox"><input id="subscribe-checkbox" type="checkbox"> I want to receive notifications by mail!</label>
                     </div>
+                <div id="for-subscribe" data-visible>
+                        <label for="newsletter-frequency">How often do you want to receive our newsletter?
+                            <select name="newsletter-frequency" id="newsletter-frequency" class="border-radius-400">
+                                <option value="weekly">weekly</option>
+                                <option value="monthly">monthly</option>
+                                <option value="yearly">yearly</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
 
-                    <input type="submit" class="border-radius-400 pointer">
-                </form>
-            </section>
-        </main>
-        <footer class="footer"></footer>
-    </div>
+                <input type="submit" class="border-radius-400 pointer">
+            </form>
+        </section>
+    </main>
+    <footer class="footer"></footer>
 </body>
 </html>
