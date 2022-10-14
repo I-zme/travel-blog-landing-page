@@ -34,6 +34,7 @@
     --primary-heading-padding-tb: var(--size-300);
 
     --primary-heading-height: 70px;
+    --section-header-height:90px;
     --title-height: 300px;
 
     --fs-body: ;
@@ -122,6 +123,10 @@ svg {
 
 /* general styling */
 
+html {
+    scroll-padding-top: var(--primary-heading-height);
+}
+
 body{
     font-family: var(--ff-body);
 }
@@ -138,6 +143,7 @@ body{
     left: 0;
     border-bottom: 1px solid var(--clr-accent-100);
     box-shadow: var(--bxshdw-bottom-100);
+    z-index: 9;
 }
 
 .logo {
@@ -171,6 +177,7 @@ body{
 
 .nav-list a {
     text-decoration: none;
+    color: black;
 }
 
 @media (max-width:50em) {
@@ -232,6 +239,7 @@ section {
     width: 100%;
     position: relative;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     margin-top: calc(var(--primary-heading-height) *1.1);
@@ -279,7 +287,7 @@ section {
 /* ABOUT & BURN */
 
 .about img{
-    grid-row:3/-2;
+    grid-row:2/-1;
     width: 100%;
     height: 100%;
     max-height: 100%;
@@ -299,6 +307,12 @@ section {
     grid-row: 2/-1;
     /* from utilities? */
     align-self: stretch;
+
+
+}
+
+.about, .burn{
+    min-height: calc(100vh - var(--primary-heading-height));
 }
 
 .burn-text, video{
@@ -322,7 +336,7 @@ section {
 
 .contact-us{
     display: grid;
-    grid-template-rows: 80px min-content;
+    grid-template-rows: var(--section-header-height) min-content;
     justify-content: center;
     align-items: stretch;
 }
@@ -333,7 +347,7 @@ section {
     width: clamp(340px, 70vw , 520px);
     display: grid;
     row-gap: var(--size-400);
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .contact-us form *{
@@ -341,12 +355,13 @@ section {
 }
 
 input[type='submit']{
-    grid-column: 1/span 1;
+    grid-column: 2/span 1;
     padding: 0 var(--size-600);
 }
 
 #newsletter-frequency{
     padding: var(--size-100) var(--fs-400);
+    margin: var(--size-200) var(--size-300);
 }
 
 label[for='subscribe-radio'] {
@@ -357,12 +372,22 @@ label[for='contact-radio']{
     grid-column: 2/span 1;
 }
 
-.contact-text{
-    width: 95%;
+label[for="fullname"], label[for="email"]{
+    grid-column: 1 / span 1;
+}
+
+#fullname, #email{
+    grid-column: 2 / span 2;
+}
+
+#for-contact, #for-subscribe{
+    display: none;
+    grid-column: 1 / -1;
 }
 
 .contact-us input[id='subscribe-checkbox']{
     display: inline;
+    margin-bottom: var(--size-400);
 }
 
 .contact-us input[type='radio']{
@@ -370,6 +395,7 @@ label[for='contact-radio']{
 }
 
 .contact-us input[type='radio']+label {
+    /* utilities */
     font-weight: 600;
 }
 
@@ -381,11 +407,6 @@ label[for='contact-radio']{
 .contact-us input[type='radio']:not(:checked)+label {
         /* utilities */
     color: grey;
-}
-
-
-#for-contact, #for-subscribe{
-    display: none;
 }
 
 #for-contact[data-visible], #for-subscribe[data-visible]{
@@ -400,6 +421,11 @@ label[for='contact-radio']{
     border-bottom: 1px dashed black;
     padding: 2px 5px;
     outline: none;
+}
+
+.contact-us input[type='text']::placeholder,
+.contact-us input[type='email']::placeholder{
+    font-style: italic;
 }
 
 .contact-us input[type='text']:focus,
@@ -466,10 +492,21 @@ label[for='contact-radio']{
     box-shadow: black 0px 0px 6px 0px;
 }
 
-
 .fw-700{
     font-weight: 700;
 }
+
+.text-box{
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-400);
+}
+
+p:first-child::first-letter{
+    font-size: var(--fs-700);
+    color: var(--clr-accent-200);
+}
+
 
 .underline {
     position: relative;
@@ -484,7 +521,6 @@ label[for='contact-radio']{
     left: 50%;
     translate: -50%;
     width: 15rem;
-    /* change? */
     border-top: 1.5px solid var(--clr-accent-200);
 }
 
@@ -496,7 +532,6 @@ label[for='contact-radio']{
     left: 50%;
     translate: -50%;
     width: 17rem;
-    /* change? */
     border-top: 1.5px solid var(--clr-accent-200);
 }
 
@@ -508,7 +543,7 @@ label[for='contact-radio']{
 .grid{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 80px repeat(12, 1fr);
+    grid-template-rows: var(--section-header-height) repeat(12, 1fr);
     column-gap: var(--size-300);
     align-items: center;
 }
