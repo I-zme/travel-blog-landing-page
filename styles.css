@@ -131,6 +131,19 @@ body{
     font-family: var(--ff-body);
 }
 
+body::after{
+    content: '';
+    background: url(img/body-bg.png);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    filter: grayscale(1) brightness(3);
+    z-index: -10;
+}
+
 /* header, navigation*/
 
 .primary-header {
@@ -200,7 +213,7 @@ section {
 
 .title::before{
     content:'';
-    background: url(img/sava-bobov-eVa2FK83K6w-unsplash.jpg) no-repeat;
+    background: url(img/title-bg.jpg) no-repeat;
     background-size: 100% auto;
     background-position: bottom;
     position: absolute;
@@ -444,6 +457,10 @@ label[for="fullname"], label[for="email"]{
     display: flex;
     flex-direction: column;
     gap: var(--size-400);
+}
+
+.bg-100{
+    background-color: rgba(255, 255, 255, 0.574);
 }
 
 p:first-child::first-letter{
